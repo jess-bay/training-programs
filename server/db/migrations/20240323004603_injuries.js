@@ -3,13 +3,9 @@
  * @returns { Promise<void> }
  */
 export async function up(knex) {
-  return knex.schema.createTable('exercises', (table) => {
+  return knex.schema.createTable('injuries', (table) => {
     table.increments('id')
-    table.string('name')
-    table.integer('reps')
-    table.integer('sets')
-    table.string('description')
-    table.string('category')
+    table.string('injury_name')
   })
 }
 
@@ -18,5 +14,5 @@ export async function up(knex) {
  * @returns { Promise<void> }
  */
 export async function down(knex) {
-  return knex.schema.dropTable('exercises')
+  return knex.schema.dropTable('injuries')
 }
