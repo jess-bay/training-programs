@@ -49,3 +49,5 @@ router.get('/:injury', async (req, res) => {
     res.sendStatus(500).send('Something went wrong on getting all exercises')
   }
 })
+
+export default router
