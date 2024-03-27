@@ -10,6 +10,7 @@ export async function up(knex) {
     table.integer('sets')
     table.string('description')
     table.string('category')
+    table.integer('injury_id').references('injuries.id')
   })
 }
 
