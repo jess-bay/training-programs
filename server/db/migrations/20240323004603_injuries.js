@@ -6,6 +6,7 @@ export async function up(knex) {
   return knex.schema.createTable('injuries', (table) => {
     table.increments('id')
     table.string('injury_name')
+    table.string('category')
   })
 }
 
