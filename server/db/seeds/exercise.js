@@ -12,7 +12,7 @@ export async function seed(knex) {
       reps: 10,
       sets: 2,
       description: 'knees above toes, move hips back, back straight',
-      category: 'lower body',
+      category: 'lower',
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ export async function seed(knex) {
       reps: 10,
       sets: 2,
       description: 'knees above toes, move hips back, back straight',
-      category: 'lower body',
+      category: 'lower',
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ export async function seed(knex) {
       reps: 10,
       sets: 2,
       description: 'knees above toes, move hips back, back straight',
-      category: 'lower body',
+      category: 'lower',
     },
   ])
 }
