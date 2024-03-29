@@ -21,6 +21,10 @@ export async function getExerciseById(
   }
 }
 
+export async function addExercise(newExercise: Exercise) {
+  return await db('exercises').insert(newExercise).returning('*')
+}
+
 export async function filterExercisesByCategory(
   category: string,
 ): Promise<Exercise[] | undefined> {

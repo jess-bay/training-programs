@@ -1,13 +1,17 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import { CategorySelection } from './CategorySelection.tsx'
+import { WorkoutPlan } from './WorkoutPlan.tsx'
 
 function App() {
-  const { data } = useFruits()
-
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
+        <h1>Exercise Engine</h1>
+        <div className="category-selection-div">
+          <CategorySelection />
+        </div>
+        <div className="workout-plan-div">
+          <WorkoutPlan />
+        </div>
       </div>
     </>
   )

@@ -26,6 +26,18 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+//POST an exercise
+router.post('/', async (req, res) => {
+  try {
+    const newExercise = req.body
+    await db.addExercise(newExercise)
+    res.sendStatus(200)
+  } catch (error) {
+    console.error('something went wrong adding a new exercise', error)
+    res.sendStatus(500).send('Something went wrong adding new exercise')
+  }
+})
+
 //GET exercises by category
 router.get('/:category', async (req, res) => {
   try {
