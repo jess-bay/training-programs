@@ -56,67 +56,73 @@ export function WorkoutPlan() {
 
   return (
     <>
-      <h3>Your Workout Plan</h3>
+      <h3 className="text-lg font-bold mb-4">Your Workout Plan</h3>
       <div className="workout-list">
         {data?.map((exercise: Exercise) => (
           <div key={exercise.id}>
-            <p>Name: {exercise.name}</p>
-            <p>Reps: {exercise.reps}</p>
-            <p>Sets: {exercise.sets}</p>
-            <p>Description: {exercise.description}</p>
-            <p>Category: {exercise.category}</p>
-            <br />
+            <p className="mb-2">Name: {exercise.name}</p>
+            <p className="mb-2">Reps: {exercise.reps}</p>
+            <p className="mb-2">Sets: {exercise.sets}</p>
+            <p className="mb-2">Description: {exercise.description}</p>
+            <p className="mb-8">Category: {exercise.category}</p>
           </div>
         ))}
       </div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name" className="block mb-2">
+          Name
+        </label>
         <input
           onChange={handleName}
-          className="new-exercise"
-          placeholder="Exercise Name"
+          className="border border-gray-300 rounded-md py-1 px-3 mb-2"
+          placeholder="What's it called?"
           value={newExercise}
           id="exerciseName"
           required
         />
-        <br />
-        <label htmlFor="reps">Reps</label>
+        <label htmlFor="reps" className="block mb-2">
+          Reps
+        </label>
         <input
           onChange={handleReps}
-          className="new-reps"
-          placeholder="How many will you do per set?"
+          className="border border-gray-300 rounded-md py-1 px-3 mb-2"
+          placeholder="How many in one go?"
           value={reps}
           id="reps"
           required
         />
-        <br />
-        <label htmlFor="sets">Sets</label>
+        <label htmlFor="sets" className="block mb-2">
+          Sets
+        </label>
         <input
           onChange={handleSets}
-          className="new-sets"
-          placeholder="How many times will you run through this exercise?"
+          className="border border-gray-300 rounded-md py-1 px-3 mb-2"
+          placeholder="How many cycles?"
           value={sets}
           id="sets"
           required
         />
-        <br />
-        <label htmlFor="description">Description</label>
+        <label htmlFor="description" className="block mb-2">
+          Description
+        </label>
         <input
           onChange={handleDescription}
-          className="new-description"
+          className="border border-gray-300 rounded-md py-1 px-3 mb-2 w-auto resize"
           placeholder="How do you do it?"
           value={description}
           id="description"
           required
         />
-        <br />
-        <label htmlFor="category">Category</label>
+        <label htmlFor="category" className="block mb-2">
+          Category
+        </label>
         <input
           type="radio"
           name="category"
           value="lower"
           checked={category === ''}
           onChange={handleCategory}
+          className="mr-2 mb-8"
           required
         />{' '}
         Lower Body
@@ -126,6 +132,7 @@ export function WorkoutPlan() {
           value="upper"
           checked={category === ''}
           onChange={handleCategory}
+          className="mr-2 ml-4"
           required
         />{' '}
         Upper Body
@@ -135,11 +142,16 @@ export function WorkoutPlan() {
           value="full"
           checked={category === ''}
           onChange={handleCategory}
+          className="mr-2 ml-4"
           required
         />
         Full Body
-        <br />
-        <button type="submit">Add To Your Workout!</button>
+        <button
+          type="submit"
+          className="bg-maroon text-white py-2 px-4 mt-2 block"
+        >
+          Add To Your Workout!
+        </button>
       </form>
     </>
   )
