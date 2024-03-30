@@ -107,7 +107,7 @@ export function WorkoutPlan() {
         </label>
         <input
           onChange={handleDescription}
-          className="border border-gray-300 rounded-md py-1 px-3 mb-2 w-auto resize"
+          className="w-auto border border-gray-300 rounded-md py-1 px-3 mb-2 "
           placeholder="How do you do it?"
           value={description}
           id="description"
