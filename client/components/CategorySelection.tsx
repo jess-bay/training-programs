@@ -24,9 +24,9 @@ export function CategorySelection() {
 
   return (
     <>
-      <div>
+      <div className="mb-4">
         <form>
-          <label htmlFor="Category">
+          <label htmlFor="Category" className="block mb-2">
             Select a Category (at least one required)
           </label>
           <br />
@@ -34,6 +34,7 @@ export function CategorySelection() {
             type="checkbox"
             checked={lowerChecked}
             onChange={handleLowerChange}
+            className="mr-2"
           />{' '}
           Lower Body
           <br />
@@ -41,6 +42,7 @@ export function CategorySelection() {
             type="checkbox"
             checked={upperChecked}
             onChange={handleUpperChange}
+            className="mr-2"
           />{' '}
           Upper Body
           <br />
@@ -48,15 +50,17 @@ export function CategorySelection() {
             type="checkbox"
             checked={fullChecked}
             onChange={handleFullChange}
+            className="mr-2"
           />{' '}
           Full Body
           <br />
           <br />
-          <label htmlFor="injury">
+          <label htmlFor="injury" className="block mb-2">
             Optional: Select an injury or condition
           </label>
           <br />
-          <select>
+          {/* Tailwind border options: sm, md, lg, xl, 2xl */}
+          <select className="border border-gray-300 rounded-md py-1 px-3 mb-2">
             <option value="none">None</option>
             <option value="shoulder">Shoulder</option>
             <option value="knee">Knee</option>
@@ -70,7 +74,10 @@ export function CategorySelection() {
           </select>
           <br />
           <br />
-          <button type="submit" disabled={!formValid}>
+          <button
+            type="submit"
+            className={` bg-maroon text-white py-2 px-4 ${formValid ? '' : 'opacity-50 cursor-not-allowed'}`}
+          >
             Generate my Workout!
           </button>
         </form>
