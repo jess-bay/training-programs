@@ -6,11 +6,13 @@ function App() {
     <>
       <div className="app">
         <h1>Exercise Engine</h1>
-        <div className="category-selection-div">
-          <CategorySelection />
-        </div>
-        <div className="workout-plan-div">
-          <WorkoutPlan />
+        <div className="sections-wrapper">
+          <div className="category-selection-div">
+            <CategorySelection />
+          </div>
+          <div className="workout-plan-div">
+            <WorkoutPlan />
+          </div>
         </div>
       </div>
     </>
